@@ -21,21 +21,20 @@
 
 | Модель | OOF ROC-AUC |
 |---|---|
-| Logistic Regression (baseline) | 0.543 |
-| Random Forest | 0.644 |
-| LightGBM | 0.630 |
-| CatBoost (Optuna) | 0.651 |
-| XGBoost (Optuna) | 0.664 |
-| FT-Transformer | 0.622 |
-| MLP | 0.646 |
-| TransTab | 0.498 |
-| TabLLM | 0.499 |
-| **Stacking (финальный ансамбль)** | **0.670** |
+| Logistic Regression (baseline) | 0.533 |
+| Random Forest | 0.627 |
+| LightGBM | 0.618 |
+| CatBoost | 0.607 |
+| XGBoost | 0.616 |
+| FT-Transformer | 0.597 |
+| MLP | 0.602 |
+| TransTab | 0.538 |
+| **Stacking (финальный ансамбль)** | **0.623** |
 
-**Прирост к baseline: +0.127 AUC (+23.4%)**
+**Прирост к baseline: +0.089 AUC (+16.7%)**
 
 Финальное решение — стекинг-ансамбль (LogisticRegression как мета-модель) на
-OOF-предсказаниях LightGBM, CatBoost, XGBoost, FT-Transformer и MLP.
-RandomForest, TransTab и TabLLM исключены из ансамбля (избыточная корреляция
+OOF-предсказаниях Random Forest, CatBoost, XGBoost, FT-Transformer и MLP.
+LightGBM, TransTab исключены из ансамбля (избыточная корреляция
 с другими GBDT-моделями и качество на уровне случайного угадывания соответственно).
 
